@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="rootStudent" opacity="0.95" prefHeight="872.0" prefWidth="1216.0" style="-fx-background-color: #C8A8E9; -fx-background-radius: 20px;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.Controller.ProgrammeFormController">
+    <children>
+        <Label layoutX="453.0" layoutY="14.0" prefHeight="64.0" prefWidth="309.0" text="Course Form" textFill="#71168d">
+            <font>
+                <Font name="DejaVu Serif Bold" size="42.0" />
+            </font>
+        </Label>
+        <Separator layoutX="42.0" layoutY="375.0" prefHeight="30.0" prefWidth="1133.0" />
+        <Label layoutX="93.0" layoutY="174.0" text=" ID:" textFill="#111010">
+            <font>
+                <Font name="FreeSerif" size="20.0" />
+            </font>
+        </Label>
+        <TextField fx:id="txtPId" editable="false" layoutX="203.0" layoutY="165.0" prefHeight="43.0" prefWidth="282.0" promptText="ID" style="-fx-background-color: #F2DDDC; -fx-background-radius: 10PX;" />
+      <Label layoutX="93.0" layoutY="261.0" text="Duration:" textFill="#111010">
+         <font>
+            <Font name="FreeSerif" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="553.0" layoutY="171.0" prefHeight="30.0" prefWidth="108.0" text="Name:" textFill="#111010">
+         <font>
+            <Font name="FreeSerif" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="553.0" layoutY="261.0" text="Fee:" textFill="#111010">
+         <font>
+            <Font name="FreeSerif" size="20.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tblProgramme" layoutX="108.0" layoutY="425.0" onMouseClicked="#tblStudentOnMouseClicked" prefHeight="412.0" prefWidth="999.0">
+         <columns>
+            <TableColumn fx:id="colId" prefWidth="132.79998397827148" text="ID" />
+            <TableColumn fx:id="colProgrammeName" prefWidth="332.0" text="Programme Name" />
+            <TableColumn fx:id="colDuration" minWidth="0.0" prefWidth="288.0" text="Duration" />
+            <TableColumn fx:id="colFee" prefWidth="245.0" text="Fee" />
+         </columns>
+      </TableView>
+      <TextField fx:id="txtProgrammeName" layoutX="648.0" layoutY="164.0" prefHeight="43.0" prefWidth="282.0" promptText="Programme Name" style="-fx-background-color: #F2DDDC; -fx-background-radius: 10PX;" />
+      <TextField fx:id="txtFee" layoutX="648.0" layoutY="251.0" prefHeight="43.0" prefWidth="282.0" promptText="Fee" style="-fx-background-color: #F2DDDC; -fx-background-radius: 10PX;" />
+      <TextField fx:id="txtDuration" layoutX="203.0" layoutY="251.0" prefHeight="43.0" prefWidth="282.0" promptText="Duration" style="-fx-background-color: #F2DDDC; -fx-background-radius: 10PX;" />
+      <JFXButton fx:id="btnSave1" layoutX="1033.0" layoutY="106.0" onAction="#btnSaveOnAction" prefHeight="50.0" prefWidth="118.0" style="-fx-background-color: #6DD243FF; -fx-background-radius: 10px;" text="SAVE" textFill="#141414">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton fx:id="btnDelete1" layoutX="1030.0" layoutY="204.0" onAction="#btnDeleteOnAction" prefHeight="50.0" prefWidth="118.0" style="-fx-background-color: #F32D4CFF; -fx-background-radius: 10px;" text="DELETE" textFill="#111010">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton fx:id="btnUpdate1" layoutX="1033.0" layoutY="314.0" onAction="#btnUpdateOnAction" prefHeight="50.0" prefWidth="118.0" style="-fx-background-color: #EEEE63FF; -fx-background-radius: 10px;" text="UPDATE" textFill="#171717">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <Separator layoutX="52.0" layoutY="82.0" prefHeight="30.0" prefWidth="1095.0" />
+    </children>
+</AnchorPane>

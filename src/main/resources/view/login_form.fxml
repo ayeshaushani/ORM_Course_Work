@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" prefHeight="836.0" prefWidth="1169.0" style="-fx-background-color: #C3C7F4;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.Controller.LoginFormController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="759.0" layoutX="544.0" layoutY="39.0" strokeType="INSIDE" width="584.0">
+         <effect>
+            <InnerShadow height="60.77" radius="33.395" width="74.81" />
+         </effect>
+         <fill>
+            <LinearGradient endX="0.9571428571428572" endY="0.8" startX="0.4142857142857143">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.8552631735801697" green="0.4434697926044464" blue="0.7111355066299438" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.6263157725334167" green="0.18421052396297455" blue="0.7368420958518982" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <Label layoutX="607.0" layoutY="231.0" text="User Name">
+         <font>
+            <Font name="DejaVu Sans Mono Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="613.0" layoutY="368.0" text="Password">
+         <font>
+            <Font name="DejaVu Sans Mono Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="748.0" layoutY="63.0" text="Login" textFill="#202046">
+         <font>
+            <Font name="Chilanka Regular" size="52.0" />
+         </font>
+      </Label>
+      <RadioButton fx:id="btnRadio" focusTraversable="false" layoutX="607.0" layoutY="525.0" mnemonicParsing="false" onAction="#btnRadioOnAction" text="Show Password">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </RadioButton>
+      <Separator layoutX="634.0" layoutY="134.0" prefHeight="10.0" prefWidth="342.0" />
+      <JFXButton fx:id="btnLogin" layoutX="758.0" layoutY="619.0" onAction="#btnLoginOnAction" prefHeight="47.0" prefWidth="188.0" style="-fx-background-color: #5b0d53; -fx-background-radius: 15px;" text="LOGIN" textFill="WHITE" AnchorPane.leftAnchor="758.0" AnchorPane.rightAnchor="223.0" AnchorPane.topAnchor="619.0">
+         <font>
+            <Font name="Chilanka Regular" size="18.0" />
+         </font>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <DropShadow height="47.69" radius="23.345" spread="0.11" width="47.69" />
+         </effect>
+      </JFXButton>
+      <TextField fx:id="txtUserName" layoutX="607.0" layoutY="269.0" onAction="#txtUserNameOnAction" prefHeight="39.0" prefWidth="270.0" promptText="User  Name" style="-fx-background-radius: 10px;">
+         <effect>
+            <DropShadow />
+         </effect></TextField>
+      <TextField fx:id="txtPassword" layoutX="607.0" layoutY="411.0" onAction="#txtPasswordOnAction" prefHeight="39.0" prefWidth="270.0" promptText="Password" style="-fx-background-radius: 10px;">
+         <effect>
+            <DropShadow />
+         </effect></TextField>
+      <ImageView fitHeight="759.0" fitWidth="539.0" layoutX="4.0" layoutY="256.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icon/pngtree-little-cute-chef-png-image_13158508.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="98.0" layoutY="39.0" prefHeight="162.0" prefWidth="367.0" text="Culinary ">
+         <font>
+            <Font name="Ani" size="96.0" />
+         </font>
+         <effect>
+            <DropShadow height="16.55" radius="10.370000000000001" spread="0.62" width="26.93" />
+         </effect>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.821052610874176" green="0.31578946113586426" blue="0.9473684430122375" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.41191521286964417" green="0.7508345246315002" blue="0.9078947305679321" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <Label layoutX="98.0" layoutY="127.0" prefHeight="162.0" prefWidth="351.0" text="Academy">
+         <font>
+            <Font name="Ani" size="96.0" />
+         </font>
+         <effect>
+            <DropShadow height="16.55" radius="10.3675" spread="0.53" width="26.92" />
+         </effect>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.3899853825569153" green="0.732864260673523" blue="0.8684210777282715" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.9473684430122375" green="0.26754385232925415" blue="0.6074561476707458" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+   </children>
+   <effect>
+      <InnerShadow />
+   </effect>
+</AnchorPane>

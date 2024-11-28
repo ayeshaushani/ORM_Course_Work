@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="rootStudent" opacity="0.95" prefHeight="872.0" prefWidth="1216.0" style="-fx-background-color: #C3C7F4; -fx-background-radius: 20px;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.Controller.UserFormController">
+    <children>
+        <Label layoutX="474.0" layoutY="23.0" prefHeight="64.0" prefWidth="306.0" text="User Form" textFill="#6f1472">
+            <font>
+                <Font name="DejaVu Serif Bold" size="50.0" />
+            </font>
+        </Label>
+        <Separator layoutX="54.0" layoutY="385.0" prefHeight="30.0" prefWidth="1107.0" />
+        <Label layoutX="108.0" layoutY="171.0" text="ID:" textFill="#0d0d0d">
+            <font>
+                <Font name="FreeSerif" size="20.0" />
+            </font>
+        </Label>
+        <TextField fx:id="txtId" editable="false" layoutX="201.0" layoutY="163.0" prefHeight="40.0" prefWidth="282.0" promptText="ID" style="-fx-background-radius: 10px;" />
+        <Label layoutX="108.0" layoutY="297.0" text="Password:" textFill="#0d0d0d">
+            <font>
+                <Font name="FreeSerif" size="20.0" />
+            </font>
+        </Label>
+        <TextField fx:id="txtPassword" layoutX="201.0" layoutY="289.0" prefHeight="40.0" prefWidth="282.0" promptText="password" style="-fx-background-radius: 10px;" />
+        <Label layoutX="539.0" layoutY="297.0" text="User Name:" textFill="#0d0d0d">
+            <font>
+                <Font name="FreeSerif" size="20.0" />
+            </font>
+        </Label>
+        <TextField fx:id="txtName" layoutX="672.0" layoutY="289.0" prefHeight="40.0" prefWidth="282.0" promptText="Name" style="-fx-background-radius: 10px;" />
+        <Label layoutX="539.0" layoutY="171.0" text="User Role:" textFill="#0d0d0d">
+            <font>
+                <Font name="FreeSerif" size="20.0" />
+            </font>
+        </Label>
+        <JFXButton fx:id="btnSave" layoutX="1020.0" layoutY="134.0" onAction="#btnSaveOnAction" prefHeight="50.0" prefWidth="118.0" style="-fx-background-color: #6DD243FF; -fx-background-radius: 10px;" text="SAVE" textFill="#141414">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+            <opaqueInsets>
+                <Insets />
+            </opaqueInsets>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </JFXButton>
+        <JFXButton fx:id="btnDelete" layoutX="1020.0" layoutY="230.0" onAction="#btnDeleteOnAction" prefHeight="50.0" prefWidth="118.0" style="-fx-background-color: #F32D4CFF; -fx-background-radius: 10px;" text="DELETE" textFill="#111010">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+            <opaqueInsets>
+                <Insets />
+            </opaqueInsets>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </JFXButton>
+        <JFXButton fx:id="btnUpdate" layoutX="1022.0" layoutY="326.0" onAction="#btnUpdateOnAction" prefHeight="50.0" prefWidth="118.0" style="-fx-background-color: #EEEE63FF; -fx-background-radius: 10px;" text="UPDATE" textFill="#171717">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+            <opaqueInsets>
+                <Insets />
+            </opaqueInsets>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </JFXButton>
+      <ComboBox fx:id="cmbType" layoutX="672.0" layoutY="163.0" prefHeight="40.0" prefWidth="282.0" promptText="Admin" style="-fx-background-radius: 10px;" />
+      <TableView fx:id="UserTable" layoutX="75.0" layoutY="447.0" onMouseClicked="#tblUserOnMouseClicked" prefHeight="377.0" prefWidth="1038.0">
+         <columns>
+            <TableColumn fx:id="colid" prefWidth="117.0" text="ID" />
+            <TableColumn fx:id="colUserName" prefWidth="280.0" text="User Name" />
+            <TableColumn fx:id="colUserRole" minWidth="0.0" prefWidth="309.0" text="User Role" />
+            <TableColumn fx:id="colUserPassword" prefWidth="331.0" text="User Password" />
+         </columns>
+      </TableView>
+      <Separator layoutX="64.0" layoutY="94.0" prefHeight="30.0" prefWidth="1107.0" />
+    </children>
+</AnchorPane>

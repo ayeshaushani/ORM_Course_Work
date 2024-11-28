@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="rootStudent" opacity="0.95" prefHeight="872.0" prefWidth="1216.0" style="-fx-background-color: #C8A8E9; -fx-background-radius: 20px;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.Controller.StudentFormController">
+   <children>
+      <Label layoutX="435.0" layoutY="8.0" prefHeight="70.0" prefWidth="405.0" text="Student Form" textFill="#71168d">
+         <font>
+            <Font name="DejaVu Serif Bold" size="42.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tblStudents" layoutX="71.0" layoutY="476.0" onMouseClicked="#tblStudentOnMouseClicked" prefHeight="350.0" prefWidth="1069.0" style="-fx-background-color: #F6BCBA;">
+         <columns>
+            <TableColumn fx:id="colStudentId" prefWidth="91.20001220703125" text="Student ID" />
+            <TableColumn fx:id="colStudentName" prefWidth="184.0" text="Name" />
+            <TableColumn fx:id="colAddress" prefWidth="215.0" text="Address" />
+            <TableColumn fx:id="colContact" prefWidth="176.0" text="Contact" />
+            <TableColumn fx:id="colDob" prefWidth="194.0" text="DOB" />
+            <TableColumn fx:id="colCoordinatorId" prefWidth="207.0" text="Coordinator Id" />
+         </columns>
+      </TableView>
+      <Separator layoutX="54.0" layoutY="415.0" prefHeight="30.0" prefWidth="1122.0" />
+      <Label layoutX="66.0" layoutY="163.0" text="Student ID :" textFill="#170101">
+         <font>
+            <Font name="FreeSerif" size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtId" editable="false" layoutX="173.0" layoutY="166.0" prefHeight="41.0" prefWidth="282.0" promptText="ID" style="-fx-background-color: #F2DDDC; -fx-background-radius: 10PX;">
+         <effect>
+            <DropShadow />
+         </effect></TextField>
+      <Label layoutX="66.0" layoutY="247.0" text="Name :" textFill="#170101">
+         <font>
+            <Font name="FreeSerif" size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtName" layoutX="173.0" layoutY="246.0" prefHeight="41.0" prefWidth="282.0" promptText="Ayesha" style="-fx-background-color: #F2DDDC; -fx-background-radius: 10PX;">
+         <effect>
+            <DropShadow />
+         </effect></TextField>
+      <Label layoutX="67.0" layoutY="321.0" text="Address :" textFill="#170101">
+         <font>
+            <Font name="FreeSerif" size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtAddress" layoutX="173.0" layoutY="319.0" prefHeight="41.0" prefWidth="282.0" promptText="Matara" style="-fx-background-color: #F2DDDC; -fx-background-radius: 10PX;">
+         <effect>
+            <DropShadow />
+         </effect></TextField>
+      <Label layoutX="519.0" layoutY="163.0" text="Contact :" textFill="#170101">
+         <font>
+            <Font name="FreeSerif" size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtContact" layoutX="670.0" layoutY="166.0" prefHeight="41.0" prefWidth="282.0" promptText="0770825835" style="-fx-background-color: #F2DDDC; -fx-background-radius: 10PX;">
+         <effect>
+            <DropShadow />
+         </effect></TextField>
+      <Label layoutX="517.0" layoutY="251.0" text="Date Of Birth :" textFill="#170101">
+         <font>
+            <Font name="FreeSerif" size="20.0" />
+         </font>
+      </Label>
+      <DatePicker fx:id="cmbDob" layoutX="670.0" layoutY="249.0" prefHeight="41.0" prefWidth="282.0" showWeekNumbers="true" style="-fx-background-color: #F2DDDC; -fx-background-radius: 10PX;">
+         <effect>
+            <DropShadow />
+         </effect></DatePicker>
+      <ComboBox fx:id="cmb_Codinator_ID" layoutX="670.0" layoutY="322.0" onAction="#cmb_Codinator_OnAction" prefHeight="41.0" prefWidth="282.0" style="-fx-background-color: #F2DDDC; -fx-background-radius: 10PX;">
+         <effect>
+            <DropShadow />
+         </effect></ComboBox>
+      <Label layoutX="516.0" layoutY="325.0" text="Coordinator Id :" textFill="#170101">
+         <font>
+            <Font name="FreeSerif" size="20.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="btnSave1" layoutX="1028.0" layoutY="122.0" onAction="#btnSaveOnAction" prefHeight="50.0" prefWidth="118.0" style="-fx-background-color: #06D7A0; -fx-background-radius: 10px;" text="SAVE" textFill="#141414">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <DropShadow height="77.34" radius="44.84" spread="0.28" width="104.02" />
+         </effect>
+      </JFXButton>
+      <JFXButton fx:id="btnDelete1" layoutX="1028.0" layoutY="206.0" onAction="#btnDeleteOnAction" prefHeight="50.0" prefWidth="118.0" style="-fx-background-color: #F04770; -fx-background-radius: 10px;" text="DELETE" textFill="#111010">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <InnerShadow choke="0.12" height="47.69" radius="23.345" width="47.69">
+               <color>
+                  <Color opacity="0.954023003578186" />
+               </color>
+            </InnerShadow>
+         </effect>
+      </JFXButton>
+      <JFXButton fx:id="btnUpdate1" layoutX="1028.0" layoutY="288.0" onAction="#btnUpdateOnAction" prefHeight="50.0" prefWidth="118.0" style="-fx-background-color: #FFD167; -fx-background-radius: 10px;" text="UPDATE" textFill="#171717">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <InnerShadow choke="0.12" height="47.69" radius="23.345" width="47.69">
+               <color>
+                  <Color opacity="0.954023003578186" />
+               </color>
+            </InnerShadow>
+         </effect>
+      </JFXButton>
+      <Separator layoutX="64.0" layoutY="78.0" prefHeight="30.0" prefWidth="1122.0" />
+      <JFXButton fx:id="btnRegister" layoutX="1028.0" layoutY="360.0" onAction="#btnRegisterOnAction" prefHeight="50.0" prefWidth="118.0" style="-fx-background-color: #9b32d0; -fx-background-radius: 10px;" text="REGISTER" textFill="#171717">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <InnerShadow choke="0.12" height="47.69" radius="23.345" width="47.69">
+               <color>
+                  <Color opacity="0.954023003578186" />
+               </color>
+            </InnerShadow>
+         </effect>
+      </JFXButton>
+   </children>
+</AnchorPane>

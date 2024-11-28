@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="rootStudent" opacity="0.95" prefHeight="872.0" prefWidth="1216.0" style="-fx-background-color: #C8A8E9; -fx-background-radius: 20px;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.Controller.PaymentFormController">
+    <children>
+        <Label layoutX="481.0" layoutY="12.0" prefHeight="64.0" prefWidth="341.0" text="Payment form" textFill="#5b0851">
+            <font>
+                <Font name="DejaVu Serif Bold" size="42.0" />
+            </font>
+        </Label>
+        <Separator layoutX="60.0" layoutY="355.0" prefHeight="30.0" prefWidth="1091.0" />
+        <Text fx:id="studentid" fill="#111111" layoutX="161.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Payment ID :">
+            <font>
+                <Font name="FreeSerif" size="22.0" />
+            </font>
+        </Text>
+        <TextField fx:id="txt_payment_ID" layoutX="306.0" layoutY="116.0" prefHeight="34.0" prefWidth="222.0" promptText=" " style="-fx-background-radius: 10px; -fx-background-color: #F2DDDC;" />
+      <Text fx:id="studentid1" fill="#111111" layoutX="161.0" layoutY="206.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Register ID :">
+         <font>
+            <Font name="FreeSerif" size="22.0" />
+         </font>
+      </Text>
+      <Text fx:id="studentid11" fill="#111111" layoutX="161.0" layoutY="274.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Full Course Fee :">
+         <font>
+            <Font name="FreeSerif" size="22.0" />
+         </font>
+      </Text>
+      <TextField fx:id="txt_Full_Course_Fee" layoutX="306.0" layoutY="258.0" prefHeight="34.0" prefWidth="222.0" promptText="500000.00" style="-fx-background-radius: 10px; -fx-background-color: #F2DDDC;" />
+      <ComboBox fx:id="cmb_Registr_ID" layoutX="306.0" layoutY="184.0" prefHeight="34.0" prefWidth="222.0" promptText="Registr ID " style="-fx-background-radius: 10px; -fx-background-color: #F2DDDC;" />
+      <Text fx:id="studentid2" fill="#111111" layoutX="651.0" layoutY="131.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Advanced :">
+         <font>
+            <Font name="FreeSerif" size="22.0" />
+         </font>
+      </Text>
+      <TextField fx:id="txtPaidAmount" layoutX="765.0" layoutY="112.0" prefHeight="34.0" prefWidth="222.0" promptText="25000.00" style="-fx-background-radius: 10px; -fx-background-color: #F2DDDC;" />
+      <Text fx:id="studentid12" fill="#111111" layoutX="651.0" layoutY="202.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Amount :">
+         <font>
+            <Font name="FreeSerif" size="22.0" />
+         </font>
+      </Text>
+      <Text fx:id="studentid111" fill="#111111" layoutX="651.0" layoutY="278.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cash :">
+
+         <font>
+            <Font name="FreeSerif" size="22.0" />
+         </font>
+      </Text>
+      <TextField fx:id="txtCash" layoutX="765.0" layoutY="254.0" prefHeight="34.0" prefWidth="222.0" promptText="500000.00" style="-fx-background-radius: 10px; -fx-background-color: #F2DDDC;" />
+      <TextField fx:id="txtAmount" layoutX="765.0" layoutY="183.0" prefHeight="34.0" prefWidth="222.0" promptText="25000.00" style="-fx-background-radius: 10px; -fx-background-color: #F2DDDC;" />
+      <TableView fx:id="tbl_registr" layoutX="126.0" layoutY="411.0" prefHeight="420.0" prefWidth="950.0" style="-fx-border-radius: 15;">
+         <columns>
+            <TableColumn fx:id="col_payment_ID" prefWidth="102.0" text="payment_Id" />
+            <TableColumn fx:id="col_registr_ID" prefWidth="147.0" text="Register ID" />
+            <TableColumn fx:id="col_FullCourse_fee" prefWidth="133.0" text="Full Course fee" />
+            <TableColumn fx:id="col_paid_Amount" prefWidth="144.0" text="Advance" />
+            <TableColumn fx:id="col_Amount" prefWidth="125.0" text="Amount" />
+            <TableColumn fx:id="col_pay" prefWidth="144.0" text="cash" />
+            <TableColumn fx:id="col_balance" prefWidth="154.0" text="Balance" />
+         </columns>
+      </TableView>
+      <JFXButton fx:id="btnPay" layoutX="543.0" layoutY="310.0" onAction="#btn_Payment_onAction" prefHeight="45.0" prefWidth="116.0" style="-fx-background-color: #5b0d53; -fx-background-radius: 10px;" text="PAY" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <Separator layoutX="70.0" layoutY="68.0" prefHeight="30.0" prefWidth="1091.0" />
+    </children>
+</AnchorPane>

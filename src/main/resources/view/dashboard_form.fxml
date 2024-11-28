@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.effect.Reflection?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="mainroot" prefHeight="929.0" prefWidth="1353.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.Controller.DashboardFormController">
+   <children>
+      <AnchorPane layoutX="284.0" prefHeight="62.0" prefWidth="1216.0" style="-fx-background-color: #b21365;">
+         <children>
+            <Label fx:id="lblTime" layoutX="24.0" layoutY="6.0" prefHeight="49.0" prefWidth="186.0" text="00:00" textFill="#f5efef">
+               <font>
+                  <Font size="40.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblDate" layoutX="952.0" layoutY="1.0" prefHeight="59.0" prefWidth="260.0" text="DD:MM:YYYY" textFill="#fcf7fc">
+               <font>
+                  <Font name="FreeMono Bold" size="40.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="-3.0" prefHeight="933.0" prefWidth="287.0" style="-fx-background-color: #b21365;">
+         <children>
+            <JFXButton fx:id="btnStudent" layoutX="7.0" layoutY="76.0" onAction="#btnStudentOnAction" prefHeight="77.0" prefWidth="275.0" style="-fx-background-color: FFCBDD; -fx-background-radius: 10px;" text="  student" textFill="#141414">
+               <effect>
+                  <DropShadow height="51.75" radius="25.4" spread="0.52" width="51.85">
+                     <color>
+                        <Color red="0.06578947603702545" green="0.06426656991243362" blue="0.06426656991243362" />
+                     </color>
+                     <input>
+                        <InnerShadow />
+                     </input>
+                  </DropShadow>
+               </effect>
+               <font>
+                  <Font name="FreeSerif Bold" size="22.0" />
+               </font>
+            </JFXButton>
+            <ImageView fitHeight="62.0" fitWidth="65.0" layoutX="21.0" layoutY="83.0">
+               <image>
+                  <Image url="@../icon/coook.jpeg" />
+               </image>
+            </ImageView>
+            <JFXButton fx:id="btnUser" layoutX="7.0" layoutY="455.0" onAction="#btnUserOnAction" prefHeight="77.0" prefWidth="275.0" style="-fx-background-color: FFCBDD; -fx-background-radius: 10px;" text="  Users" textFill="#1b1a1a">
+               <font>
+                  <Font name="FreeSerif Bold" size="21.0" />
+               </font>
+            </JFXButton>
+            <ImageView fitHeight="62.0" fitWidth="65.0" layoutX="17.0" layoutY="464.0">
+               <image>
+                  <Image url="@../icon/rating.png" />
+               </image>
+            </ImageView>
+            <JFXButton layoutX="7.0" layoutY="795.0" onAction="#btnLogoutOnAction" prefHeight="90.0" prefWidth="275.0" style="-fx-background-color: #4C1D3D; -fx-background-radius: 10px;" text="Logout" textFill="#fffbfb">
+               <font>
+                  <Font name="FreeMono Bold" size="28.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="btnRegister" layoutX="6.0" layoutY="573.0" onAction="#btnRegisterOnAction" prefHeight="77.0" prefWidth="275.0" style="-fx-background-color: FFCBDD; -fx-background-radius: 10px;" text="       Register" textFill="#1b1a1a">
+               <font>
+                  <Font name="FreeSerif Bold" size="21.0" />
+               </font>
+            </JFXButton>
+            <ImageView fitHeight="46.0" fitWidth="65.0" layoutX="16.0" layoutY="587.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icon/register.png" />
+               </image>
+            </ImageView>
+            <JFXButton fx:id="btnPayment" layoutX="6.0" layoutY="326.0" onAction="#btnPaymentOnAction" prefHeight="77.0" prefWidth="275.0" style="-fx-background-color: FFCBDD; -fx-background-radius: 10px;" text="         Payments" textFill="#1b1a1a">
+               <font>
+                  <Font name="FreeSerif Bold" size="21.0" />
+               </font>
+               <effect>
+                  <DropShadow height="101.06" radius="73.00999999999999" spread="0.22" width="192.98" />
+               </effect>
+            </JFXButton>
+            <ImageView fitHeight="62.0" fitWidth="77.0" layoutX="15.0" layoutY="334.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icon/payments.jpg" />
+               </image>
+            </ImageView>
+            <JFXButton fx:id="btnProgramm" layoutX="8.0" layoutY="197.0" onAction="#btnProgrammeOnAction" prefHeight="77.0" prefWidth="275.0" style="-fx-background-color: FFCBDD; -fx-background-radius: 10px;" text="           Programme" textFill="#1b1a1a">
+               <font>
+                  <Font name="FreeSerif Bold" size="21.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </JFXButton>
+            <ImageView fitHeight="62.0" fitWidth="62.0" layoutX="17.0" layoutY="206.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icon/804508_book_512x512.png" />
+               </image>
+            </ImageView>
+            <JFXButton fx:id="btnDash" layoutX="8.0" layoutY="688.0" onAction="#btnDashboardOnAction" prefHeight="77.0" prefWidth="275.0" style="-fx-background-color: FFCBDD; -fx-background-radius: 10px;" text="         DashBoard" textFill="#1b1a1a">
+               <font>
+                  <Font name="FreeSerif Bold" size="21.0" />
+               </font>
+            </JFXButton>
+            <ImageView fitHeight="62.0" fitWidth="65.0" layoutX="17.0" layoutY="696.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icon/imgbin-house-icon-design-home-icon-chimney-room-white-and-brown-house-illustration-SATVQ9RD7DM1KBGisaZEyXc7H.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="62.0" fitWidth="65.0" layoutX="16.0" layoutY="809.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icon/logout.jpg" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="root" layoutX="284.0" layoutY="62.0" prefHeight="872.0" prefWidth="1216.0" style="-fx-background-color: #bc6691; -fx-background-radius: 10px;">
+         <children>
+            <ImageView fitHeight="668.0" fitWidth="566.0" layoutX="287.0" layoutY="185.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icon/pngtree-little-cute-chef-png-image_13158508.png" />
+               </image>
+            </ImageView>
+            <Label blendMode="MULTIPLY" layoutX="668.0" layoutY="420.0" prefHeight="96.0" prefWidth="478.0" text=" Academy" textFill="#222021">
+               <font>
+                  <Font name="DejaVu Sans Bold" size="79.0" />
+               </font>
+               <effect>
+                  <Reflection />
+               </effect>
+            </Label>
+            <Label layoutX="50.0" layoutY="409.0" prefHeight="96.0" prefWidth="393.0" text="Culinary" textFill="#222021">
+               <font>
+                  <Font name="DejaVu Sans Bold" size="79.0" />
+               </font>
+               <effect>
+                  <Reflection bottomOpacity="0.14" fraction="0.77" topOpacity="0.67" />
+               </effect>
+            </Label>
+            <Label layoutX="122.0" layoutY="235.0" prefHeight="96.0" prefWidth="169.0" text="The" textFill="#222021">
+               <font>
+                  <Font name="DejaVu Sans Bold" size="79.0" />
+               </font>
+               <effect>
+                  <Reflection />
+               </effect>
+            </Label>
+            <Label layoutX="365.0" layoutY="58.0" text="Welcome..." textFill="WHITE">
+               <font>
+                  <Font name="DejaVu Serif Bold" size="79.0" />
+               </font>
+               <effect>
+                  <DropShadow height="222.63" radius="103.4025" spread="0.69" width="192.98" />
+               </effect>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
