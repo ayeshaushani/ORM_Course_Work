@@ -201,7 +201,7 @@ public class ProgrammeFormController implements Initializable {
         if (isUpdated) {
 
             btnSave.setDisable(false);
-            new Alert(Alert.AlertType.CONFIRMATION, "Programme Update Successful :)!!!").show();
+            new Alert(Alert.AlertType.CONFIRMATION, "Programme  Update Successful :)!!!").show();
             refreshTable();
             clearAll();
             clearAll();
