@@ -19,6 +19,8 @@ import lk.ijse.DTO.tm.StudentTM;
 import lk.ijse.bo.BOFactory;
 import lk.ijse.bo.custom.StudentBO;
 import lk.ijse.entity.User;
+import lk.ijse.util.regex.RegExFactory;
+import lk.ijse.util.regex.RegExType;
 
 import java.io.IOException;
 import java.net.URL;
@@ -175,28 +177,33 @@ public class StudentFormController implements Initializable {
     void btnSaveOnAction(ActionEvent event) throws IOException {
         User selectedCoordinator = (User) this.cmb_Codinator_ID.getSelectionModel().getSelectedItem();
 
-        boolean isSaved = studentBO.addStudent(new StudentDTO(txtId.getText(), txtName.getText(), txtAddress.getText(), txtContact.getText(), selectedCoordinator, cmbDob.getValue()));
-        if(isSaved){
-            setComboUser();
-            new Alert(Alert.AlertType.CONFIRMATION,"Student save successfully....!!! :)").show();
-            getAll();
-            clearAll();
+        if (validity()){
+            if (checkRegex()) {
+                boolean isSaved = studentBO.addStudent(new StudentDTO(txtId.getText(), txtName.getText(), txtAddress.getText(), txtContact.getText(), selectedCoordinator, cmbDob.getValue()));
+                if (isSaved) {
+                    setComboUser();
+                    new Alert(Alert.AlertType.CONFIRMATION, "Student save successfully....!!! :)").show();
+                    getAll();
+                    clearAll();
 
 
+                    // Set the popup window to be modal (block input to other windows)
+                    //  popupStage.initModality(Modality.APPLICATION_MODAL);
 
+                    // Center the popup on the screen
+                    //   popupStage.centerOnScreen();
 
-            // Set the popup window to be modal (block input to other windows)
-          //  popupStage.initModality(Modality.APPLICATION_MODAL);
-
-            // Center the popup on the screen
-         //   popupStage.centerOnScreen();
-
-            // Show the popup
-         //   popupStage.showAndWait();
+                    // Show the popup
+                    //   popupStage.showAndWait();
+                } else {
+                    new Alert(Alert.AlertType.ERROR, "Student save unsuccessfully....!!! :(").show();
+                }
+            }else {
+                new Alert(Alert.AlertType.ERROR, "Invalid types !!!").show();
+            }
         }else {
-            new Alert(Alert.AlertType.ERROR,"Student save unsuccessfully....!!! :(").show();
+            new Alert(Alert.AlertType.ERROR, "Please fill all fields :( !!!").show();
         }
-
     }
 
     private void setStudentID() throws IOException {
@@ -290,5 +297,22 @@ public class StudentFormController implements Initializable {
         Stage popupStage = new Stage();
         popupStage.setScene(scene);
         popupStage.setTitle("Register Form");
+    }
+
+    private boolean checkRegex() {
+        return RegExFactory.getInstance().getPattern(RegExType.NAME).matcher(txtName.getText()).matches() &&
+                RegExFactory.getInstance().getPattern(RegExType.CITY).matcher(txtAddress.getText()).matches() && cmb_Codinator_ID.getValue() != null &&
+                RegExFactory.getInstance().getPattern(RegExType.MOBILE).matcher(txtContact.getText()).matches() && cmbDob.getValue() != null ;
+    }
+
+    private boolean validity() {
+
+        return !txtId.getText().isEmpty() &&
+                !txtName.getText().isEmpty() &&
+                !txtAddress.getText().isEmpty() &&
+                cmb_Codinator_ID.getValue() != null &&
+                !txtContact.getText().isEmpty() &&
+                cmbDob.getValue() != null;
+
     }
 }

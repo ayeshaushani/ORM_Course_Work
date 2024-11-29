@@ -18,6 +18,8 @@ import lk.ijse.DTO.tm.ProgrammeTM;
 import lk.ijse.DTO.tm.StudentTM;
 import lk.ijse.bo.BOFactory;
 import lk.ijse.bo.custom.ProgrammeBO;
+import lk.ijse.util.regex.RegExFactory;
+import lk.ijse.util.regex.RegExType;
 
 import java.io.IOException;
 import java.net.URL;
@@ -167,16 +169,18 @@ public class ProgrammeFormController implements Initializable {
         programmeDTO.setDuration(duration);
         programmeDTO.setFee(fee);
 
-        boolean isAdded = programmeBO.addProgramme(programmeDTO);
 
-        if (isAdded) {
-            new Alert(Alert.AlertType.CONFIRMATION, "Programme Added Successful :)!!!").show();
-            refreshTable();
-            clearAll();
-        }else {
-            new Alert(Alert.AlertType.ERROR, "programme not Added :( !!!").show();
 
-        }
+                boolean isAdded = programmeBO.addProgramme(programmeDTO);
+
+                if (isAdded) {
+                    new Alert(Alert.AlertType.CONFIRMATION, "Programme Added Successful :)!!!").show();
+                    refreshTable();
+                    clearAll();
+                } else {
+                    new Alert(Alert.AlertType.ERROR, "programme not Added :( !!!").show();
+
+                }
     }
 
     @FXML
@@ -227,4 +231,6 @@ public class ProgrammeFormController implements Initializable {
         txtDuration.clear();
         txtFee.clear();
     }
+
+
 }

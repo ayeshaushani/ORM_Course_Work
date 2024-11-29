@@ -14,6 +14,8 @@ import lk.ijse.DTO.UserDTO;
 import lk.ijse.DTO.tm.UserTM;
 import lk.ijse.bo.BOFactory;
 import lk.ijse.bo.custom.UserBO;
+import lk.ijse.util.regex.RegExFactory;
+import lk.ijse.util.regex.RegExType;
 import org.mindrot.jbcrypt.BCrypt;
 //import org.springframework.security.crypto.bcrypt.BCrypt;
 //import org.springframework.security.crypto.bcrypt.BCrypt;
@@ -172,16 +174,24 @@ public class UserFormController implements Initializable {
         userDTO.setPassword(hashedPassword);
         userDTO.setRole(role);
 
-        boolean isSaved = userBO.addUser(userDTO);
+        if (validity()) {
+            if (checkRegex()) {
+                boolean isSaved = userBO.addUser(userDTO);
 
-        if (isSaved){
+                if (isSaved) {
 
-            clearAll();
-            new Alert(Alert.AlertType.CONFIRMATION, "User Added successful :) !!!").show();
-            refreshTable();
+                    clearAll();
+                    new Alert(Alert.AlertType.CONFIRMATION, "User Added successful :) !!!").show();
+                    refreshTable();
+                } else {
+                    new Alert(Alert.AlertType.CONFIRMATION, "User  Added Unsuccessful :( !!!").show();
+
+                }
+            }else {
+                new Alert(Alert.AlertType.ERROR, "Invalid types !!!").show();
+            }
         }else {
-            new Alert(Alert.AlertType.CONFIRMATION, "User  Added Unsuccessful :( !!!").show();
-
+            new Alert(Alert.AlertType.ERROR, "Please fill all fields :( !!!").show();
         }
     }
 
@@ -233,4 +243,18 @@ public class UserFormController implements Initializable {
         cmbType.setValue(null);
     }
 
+    private boolean checkRegex() {
+        return RegExFactory.getInstance().getPattern(RegExType.NAME).matcher(txtName.getText()).matches() &&
+                RegExFactory.getInstance().getPattern(RegExType.PASSWORD).matcher(txtPassword.getText()).matches() &&
+                cmbType.getValue() != null ;
+    }
+
+    private boolean validity() {
+
+        return  !txtId.getText().isEmpty() &&
+                !txtName.getText().isEmpty() &&
+                !txtPassword.getText().isEmpty() &&
+                cmbType.getValue() != null;
+
+    }
 }
